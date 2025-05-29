@@ -4,8 +4,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:VGCatalog.WPF.Views"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             d:DesignHeight="550"
-             d:DesignWidth="800"
+             d:DesignHeight="900"
+             d:DesignWidth="1200"
              mc:Ignorable="d">
 
     <Border Grid.Column="1"
@@ -82,6 +82,7 @@
             <!--  Details Controls  -->
             <Grid Grid.Column="1"
                   MaxWidth="600"
+                  Margin="10,0,0,0"
                   VerticalAlignment="Center">
                 <Border Margin="5"
                         Background="#1F1F1F"
@@ -103,7 +104,8 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
 
-                        <Grid Grid.Row="0" Margin="0,0,0,30">
+                        <!--  Title  -->
+                        <Grid Grid.Row="0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" SharedSizeGroup="DetailsLabel" />
                                 <ColumnDefinition Width="*" />
@@ -114,6 +116,7 @@
                             <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
                         </Grid>
 
+                        <!--  Platform  -->
                         <Grid Grid.Row="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition SharedSizeGroup="DetailsLabel" />
@@ -125,7 +128,44 @@
                             <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
                         </Grid>
 
-                        <Grid Grid.Row="2">
+                        <!--  Physical/Digital  -->
+                        <Grid Grid.Row="2" Margin="0,0,0,30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition SharedSizeGroup="DetailsLabel" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0"
+                                   Margin="0,10,10,0"
+                                   Padding="0"
+                                   Content="Media"
+                                   Style="{StaticResource CustomDetailsLabel}" />
+
+                            <Border Grid.Column="1"
+                                    Margin="50,0,0,0"
+                                    HorizontalAlignment="Center">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <RadioButton Grid.Column="0"
+                                                 Content="Physical"
+                                                 Style="{StaticResource CustomRadioButton}" />
+
+                                    <RadioButton Grid.Column="1"
+                                                 Content="Digital"
+                                                 Style="{StaticResource CustomRadioButton}" />
+
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+
+                        <!--  Release Year  -->
+                        <Grid Grid.Row="3">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition SharedSizeGroup="DetailsLabel" />
                                 <ColumnDefinition Width="*" />
@@ -133,10 +173,14 @@
                             <Label Grid.Column="0"
                                    Content="Release Year"
                                    Style="{StaticResource CustomDetailsLabel}" />
-                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
+                            <TextBox Grid.Column="1"
+                                     Width="100"
+                                     HorizontalAlignment="Left"
+                                     Style="{StaticResource CustomDetailsTextBox}" />
                         </Grid>
 
-                        <Grid Grid.Row="3">
+                        <!--  Genre  -->
+                        <Grid Grid.Row="4">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition SharedSizeGroup="DetailsLabel" />
                                 <ColumnDefinition Width="*" />
@@ -147,7 +191,8 @@
                             <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
                         </Grid>
 
-                        <Grid Grid.Row="4">
+                        <!--  Developer  -->
+                        <Grid Grid.Row="5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition SharedSizeGroup="DetailsLabel" />
                                 <ColumnDefinition Width="*" />
@@ -158,7 +203,8 @@
                             <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
                         </Grid>
 
-                        <Grid Grid.Row="5">
+                        <!--  Publisher  -->
+                        <Grid Grid.Row="6">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition SharedSizeGroup="DetailsLabel" />
                                 <ColumnDefinition Width="*" />
@@ -169,17 +215,7 @@
                             <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
                         </Grid>
 
-                        <Grid Grid.Row="6">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition SharedSizeGroup="DetailsLabel" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0"
-                                   Content="Physical/Digital"
-                                   Style="{StaticResource CustomDetailsLabel}" />
-                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
-                        </Grid>
-
+                        <!--  Description  -->
                         <Grid Grid.Row="7">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition SharedSizeGroup="DetailsLabel" />

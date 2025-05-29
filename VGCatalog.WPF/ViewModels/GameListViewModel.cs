@@ -10,7 +10,7 @@ namespace VGCatalog.WPF.ViewModels
 {
     public class GameListViewModel : ViewModelBase
     {
-        public ICommand FilterClickCommand { get; }
+        public ICommand FilterClickCommand { get; } //TODO: This is set as the command for the Filter button, but that's all I've done
 
         public bool SearchBoxHasValue => !string.IsNullOrWhiteSpace(_searchString);
 
