@@ -3,7 +3,208 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:VGCatalog.WPF"
              StartupUri="MainWindow.xaml">
+
     <Application.Resources>
-         
+
+        <Style x:Key="CustomTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="CaretBrush" Value="LightGray" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0,0,10,10" />
+            <Setter Property="Padding" Value="7,0,0,0" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        <Border Name="Border"
+                                Height="34"
+                                Background="#1F1F1F"
+                                CornerRadius="7">
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="0" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!--  TODO: Haven't disabled this control before. This is probably all wrong  -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#EEEEEE" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#EEEEEE" />
+                                <Setter Property="Foreground" Value="#888888" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomDetailsTextBox"
+               BasedOn="{StaticResource CustomTextBox}"
+               TargetType="{x:Type TextBox}">
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="Foreground" Value="DarkGray" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="CaretBrush" Value="DarkGray" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        <Border Name="Border"
+                                Height="42"
+                                Background="Black"
+                                CornerRadius="7">
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="0" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!--  TODO: Haven't disabled this control before. This is probably all wrong  -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#EEEEEE" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#EEEEEE" />
+                                <Setter Property="Foreground" Value="#888888" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomDetailsDescriptionBox"
+               BasedOn="{StaticResource CustomDetailsTextBox}"
+               TargetType="{x:Type TextBox}">
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="AcceptsReturn" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        <Border Name="Border"
+                                Height="100"
+                                Background="Black"
+                                CornerRadius="7">
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="0" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!--  TODO: Haven't disabled this control before. This is probably all wrong  -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#EEEEEE" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#EEEEEE" />
+                                <Setter Property="Foreground" Value="#888888" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomButtonPrimary" TargetType="{x:Type Button}">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="#2A2A2A" />
+            <Setter Property="FontSize" Value="18" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ButtonBase}">
+                        <Border Padding="15,10,15,10"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="7">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1F1F1F" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomButtonSecondary"
+               BasedOn="{StaticResource CustomButtonPrimary}"
+               TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#3F3F3F" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ButtonBase}">
+                        <Border Padding="15,10,15,10"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="7">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2A2A2A" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomImageNavigation"
+               BasedOn="{StaticResource CustomButtonPrimary}"
+               TargetType="{x:Type Button}">
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ButtonBase}">
+                        <Border Padding="25,4,25,7"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="7">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1F1F1F" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomButtonFilter"
+               BasedOn="{StaticResource CustomButtonPrimary}"
+               TargetType="Button">
+
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Height" Value="35" />
+            <Setter Property="Width" Value="35" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ButtonBase}">
+                        <Border Padding="5,3,5,7"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="7">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1F1F1F" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomDetailsLabel" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="DarkGray" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Height" Value="70" />
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+            <Setter Property="Padding" Value="0,16,0,0" />
+            <Setter Property="Margin" Value="0,0,12,0" />
+        </Style>
+
     </Application.Resources>
 </Application>

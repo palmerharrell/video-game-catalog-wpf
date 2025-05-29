@@ -1,0 +1,235 @@
+﻿<UserControl x:Class="VGCatalog.WPF.Views.GameDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:VGCatalog.WPF.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="550"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+
+    <Border Grid.Column="1"
+            Padding="10"
+            Background="#1F1F1F"
+            BorderBrush="#1F1F1F"
+            BorderThickness="2"
+            CornerRadius="7">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--  Image Controls  -->
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0"
+                        Margin="5"
+                        Padding="5,5,5,0"
+                        Background="#121212"
+                        BorderBrush="#121212"
+                        BorderThickness="15"
+                        CornerRadius="3">
+
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <!--  Image  -->
+                        <Image Grid.Row="0" Source="/Images/SMBAndDH.jpg" />
+
+                        <!--  Naviagation Buttons  -->
+                        <StackPanel Grid.Row="1"
+                                    Margin="0,10,0,0"
+                                    HorizontalAlignment="Center"
+                                    Orientation="Horizontal">
+                            <Button Margin="0,0,10,0"
+                                    Content="&lt;"
+                                    Style="{StaticResource CustomImageNavigation}" />
+                            <Button Content="&gt;" Style="{StaticResource CustomImageNavigation}" />
+                        </StackPanel>
+
+                    </Grid>
+
+                </Border>
+
+
+
+                <!--  Add/Download/Delete Buttons  -->
+                <StackPanel Grid.Row="2"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Button Margin="0,5,10,10"
+                            Content="Add from Disk"
+                            Style="{StaticResource CustomButtonSecondary}" />
+                    <Button Margin="0,5,10,10"
+                            Content="Auto Download"
+                            Style="{StaticResource CustomButtonSecondary}" />
+                    <Button Margin="0,5,0,10"
+                            Content="Delete"
+                            Style="{StaticResource CustomButtonSecondary}" />
+                </StackPanel>
+            </Grid>
+
+            <!--  Details Controls  -->
+            <Grid Grid.Column="1"
+                  MaxWidth="600"
+                  VerticalAlignment="Center">
+                <Border Margin="5"
+                        Background="#1F1F1F"
+                        BorderBrush="#1F1F1F"
+                        BorderThickness="3"
+                        CornerRadius="7">
+                    <Grid Grid.IsSharedSizeScope="True">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Margin="0,0,0,30">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="DetailsLabel" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                   Content="Title"
+                                   Style="{StaticResource CustomDetailsLabel}" />
+                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition SharedSizeGroup="DetailsLabel" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                   Content="Platform"
+                                   Style="{StaticResource CustomDetailsLabel}" />
+                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
+                        </Grid>
+
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition SharedSizeGroup="DetailsLabel" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                   Content="Release Year"
+                                   Style="{StaticResource CustomDetailsLabel}" />
+                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
+                        </Grid>
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition SharedSizeGroup="DetailsLabel" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                   Content="Genre"
+                                   Style="{StaticResource CustomDetailsLabel}" />
+                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
+                        </Grid>
+
+                        <Grid Grid.Row="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition SharedSizeGroup="DetailsLabel" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                   Content="Developer"
+                                   Style="{StaticResource CustomDetailsLabel}" />
+                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
+                        </Grid>
+
+                        <Grid Grid.Row="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition SharedSizeGroup="DetailsLabel" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                   Content="Publisher"
+                                   Style="{StaticResource CustomDetailsLabel}" />
+                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
+                        </Grid>
+
+                        <Grid Grid.Row="6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition SharedSizeGroup="DetailsLabel" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                   Content="Physical/Digital"
+                                   Style="{StaticResource CustomDetailsLabel}" />
+                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
+                        </Grid>
+
+                        <Grid Grid.Row="7">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition SharedSizeGroup="DetailsLabel" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                   Padding="0,8,0,0"
+                                   VerticalAlignment="Top"
+                                   Content="Description"
+                                   Style="{StaticResource CustomDetailsLabel}" />
+                            <TextBox Grid.Column="1"
+                                     Margin="0,10,10,10"
+                                     VerticalContentAlignment="Top"
+                                     Style="{StaticResource CustomDetailsDescriptionBox}" />
+                        </Grid>
+
+                        <Grid Grid.Row="8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="0"
+                                    Width="160"
+                                    Margin="0,15,10,0"
+                                    HorizontalAlignment="Left"
+                                    Content="Prices"
+                                    Style="{StaticResource CustomButtonSecondary}" />
+
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Button Grid.Column="0"
+                                        Margin="0,15,10,0"
+                                        Content="Save"
+                                        Style="{StaticResource CustomButtonSecondary}" />
+                                <Button Grid.Column="1"
+                                        Margin="0,15,10,0"
+                                        Content="Cancel"
+                                        Style="{StaticResource CustomButtonSecondary}" />
+                            </Grid>
+
+                        </Grid>
+
+
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
