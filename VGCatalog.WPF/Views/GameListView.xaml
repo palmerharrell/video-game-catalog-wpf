@@ -27,6 +27,7 @@
                      Grid.Column="0"
                      Margin="0,0,5,10"
                      utilities:TextBoxAdorner.Placeholder="Search..."
+                     FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                      Style="{StaticResource CustomTextBox}"
                      Text="{Binding SearchString, UpdateSourceTrigger=PropertyChanged}" />
 
@@ -35,6 +36,7 @@
                     Margin="0,0,4,0"
                     Command="{Binding FilterClickCommand}"
                     Content=". . ."
+                    FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                     Style="{StaticResource CustomButtonFilter}" />
 
         </Grid>
@@ -52,10 +54,18 @@
                      FontSize="16"
                      Foreground="LightGray"
                      SelectionMode="Single">
-                <ListBoxItem Content="Super Mario Bros." Style="{StaticResource CustomListBoxItem}" />
-                <ListBoxItem Content="Mega Man 2" Style="{StaticResource CustomListBoxItem}" />
-                <ListBoxItem Content="Pokemon Platinum" Style="{StaticResource CustomListBoxItem}" />
-                <ListBoxItem Content="Mike Tyson's Punch Out!" Style="{StaticResource CustomListBoxItem}" />
+                <ListBoxItem Content="Super Mario Bros."
+                             FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
+                             Style="{StaticResource CustomListBoxItem}" />
+                <ListBoxItem Content="Mega Man 2"
+                             FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
+                             Style="{StaticResource CustomListBoxItem}" />
+                <ListBoxItem Content="Pokemon Platinum"
+                             FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
+                             Style="{StaticResource CustomListBoxItem}" />
+                <ListBoxItem Content="Mike Tyson's Punch Out!"
+                             FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
+                             Style="{StaticResource CustomListBoxItem}" />
             </ListBox>
         </Border>
 
@@ -68,11 +78,13 @@
             <Button x:Name="btnAddGame"
                     Margin="0,0,10,0"
                     Content="Add Game"
+                    FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                     Style="{StaticResource CustomButtonPrimary}" />
 
             <!--  Scan Barcodes Button  -->
             <Button x:Name="btnScan"
                     Content="Scan Barcodes"
+                    FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                     Style="{StaticResource CustomButtonPrimary}" />
 
         </StackPanel>

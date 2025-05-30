@@ -53,8 +53,11 @@
                                     Orientation="Horizontal">
                             <Button Margin="0,0,10,0"
                                     Content="&lt;"
+                                    FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                                     Style="{StaticResource CustomImageNavigation}" />
-                            <Button Content="&gt;" Style="{StaticResource CustomImageNavigation}" />
+                            <Button Content="&gt;"
+                                    FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
+                                    Style="{StaticResource CustomImageNavigation}" />
                         </StackPanel>
 
                     </Grid>
@@ -69,12 +72,15 @@
                             Orientation="Horizontal">
                     <Button Margin="0,5,10,10"
                             Content="Add Image"
+                            FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                             Style="{StaticResource CustomButtonSecondary}" />
                     <Button Margin="0,5,10,10"
                             Content="Auto Download"
+                            FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                             Style="{StaticResource CustomButtonSecondary}" />
                     <Button Margin="0,5,0,10"
                             Content="Delete Image"
+                            FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                             Style="{StaticResource CustomButtonSecondary}" />
                 </StackPanel>
             </Grid>
@@ -113,7 +119,9 @@
                             <Label Grid.Column="0"
                                    Content="Title"
                                    Style="{StaticResource CustomDetailsLabel}" />
-                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
+                            <TextBox Grid.Column="1"
+                                     FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
+                                     Style="{StaticResource CustomDetailsTextBox}" />
                         </Grid>
 
                         <!--  Platform  -->
@@ -125,7 +133,9 @@
                             <Label Grid.Column="0"
                                    Content="Platform"
                                    Style="{StaticResource CustomDetailsLabel}" />
-                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
+                            <TextBox Grid.Column="1"
+                                     FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
+                                     Style="{StaticResource CustomDetailsTextBox}" />
                         </Grid>
 
                         <!--  Physical/Digital  -->
@@ -153,10 +163,12 @@
 
                                     <RadioButton Grid.Column="0"
                                                  Content="Physical"
+                                                 FocusVisualStyle="{StaticResource CustomRadioButtonFocusVisualStyle}"
                                                  Style="{StaticResource CustomRadioButton}" />
 
                                     <RadioButton Grid.Column="1"
                                                  Content="Digital"
+                                                 FocusVisualStyle="{StaticResource CustomRadioButtonFocusVisualStyle}"
                                                  Style="{StaticResource CustomRadioButton}" />
 
                                 </Grid>
@@ -176,6 +188,7 @@
                             <TextBox Grid.Column="1"
                                      Width="100"
                                      HorizontalAlignment="Left"
+                                     FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                                      Style="{StaticResource CustomDetailsTextBox}" />
                         </Grid>
 
@@ -188,7 +201,9 @@
                             <Label Grid.Column="0"
                                    Content="Genre"
                                    Style="{StaticResource CustomDetailsLabel}" />
-                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
+                            <TextBox Grid.Column="1"
+                                     FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
+                                     Style="{StaticResource CustomDetailsTextBox}" />
                         </Grid>
 
                         <!--  Developer  -->
@@ -200,7 +215,9 @@
                             <Label Grid.Column="0"
                                    Content="Developer"
                                    Style="{StaticResource CustomDetailsLabel}" />
-                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
+                            <TextBox Grid.Column="1"
+                                     FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
+                                     Style="{StaticResource CustomDetailsTextBox}" />
                         </Grid>
 
                         <!--  Publisher  -->
@@ -212,7 +229,9 @@
                             <Label Grid.Column="0"
                                    Content="Publisher"
                                    Style="{StaticResource CustomDetailsLabel}" />
-                            <TextBox Grid.Column="1" Style="{StaticResource CustomDetailsTextBox}" />
+                            <TextBox Grid.Column="1"
+                                     FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
+                                     Style="{StaticResource CustomDetailsTextBox}" />
                         </Grid>
 
                         <!--  Description  -->
@@ -229,6 +248,7 @@
                             <TextBox Grid.Column="1"
                                      Margin="0,10,10,10"
                                      VerticalContentAlignment="Top"
+                                     FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                                      Style="{StaticResource CustomDetailsDescriptionBox}" />
                         </Grid>
 
@@ -242,6 +262,7 @@
                                     Margin="0,15,10,0"
                                     HorizontalAlignment="Left"
                                     Content="Prices"
+                                    FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                                     Style="{StaticResource CustomButtonSecondary}" />
                         </Grid>
                     </Grid>
