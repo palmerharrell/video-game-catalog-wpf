@@ -42,6 +42,7 @@
         <!--  Game List  -->
         <Border Grid.Row="1"
                 Margin="0,0,10,0"
+                Padding="5"
                 Background="#1F1F1F"
                 BorderBrush="#1F1F1F"
                 BorderThickness="2"
@@ -49,11 +50,12 @@
             <ListBox Background="Transparent"
                      BorderBrush="Transparent"
                      FontSize="16"
-                     Foreground="LightGray">
-                <ListBoxItem Content="Super Mario Bros." />
-                <ListBoxItem Content="Mega Man 2" />
-                <ListBoxItem Content="Pokemon Platinum" />
-                <ListBoxItem Content="Mike Tyson's Punch Out!" />
+                     Foreground="LightGray"
+                     SelectionMode="Single">
+                <ListBoxItem Content="Super Mario Bros." Style="{StaticResource CustomListBoxItem}" />
+                <ListBoxItem Content="Mega Man 2" Style="{StaticResource CustomListBoxItem}" />
+                <ListBoxItem Content="Pokemon Platinum" Style="{StaticResource CustomListBoxItem}" />
+                <ListBoxItem Content="Mike Tyson's Punch Out!" Style="{StaticResource CustomListBoxItem}" />
             </ListBox>
         </Border>
 

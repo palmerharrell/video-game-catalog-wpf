@@ -44,7 +44,7 @@
                         </Grid.RowDefinitions>
 
                         <!--  Image  -->
-                        <Image Grid.Row="0" Source="/Images/SMBAndDH.jpg" />
+                        <Image Grid.Row="0" Source="/Images/SMB1.jpg" />
 
                         <!--  Naviagation Buttons  -->
                         <StackPanel Grid.Row="1"
@@ -68,13 +68,13 @@
                             HorizontalAlignment="Center"
                             Orientation="Horizontal">
                     <Button Margin="0,5,10,10"
-                            Content="Add from Disk"
+                            Content="Add Image"
                             Style="{StaticResource CustomButtonSecondary}" />
                     <Button Margin="0,5,10,10"
                             Content="Auto Download"
                             Style="{StaticResource CustomButtonSecondary}" />
                     <Button Margin="0,5,0,10"
-                            Content="Delete"
+                            Content="Delete Image"
                             Style="{StaticResource CustomButtonSecondary}" />
                 </StackPanel>
             </Grid>
@@ -234,35 +234,16 @@
 
                         <Grid Grid.Row="8">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition SharedSizeGroup="DetailsLabel" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Button Grid.Column="0"
+                            <Button Grid.Column="1"
                                     Width="160"
                                     Margin="0,15,10,0"
                                     HorizontalAlignment="Left"
                                     Content="Prices"
                                     Style="{StaticResource CustomButtonSecondary}" />
-
-                            <Grid Grid.Column="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-
-                                <Button Grid.Column="0"
-                                        Margin="0,15,10,0"
-                                        Content="Save"
-                                        Style="{StaticResource CustomButtonSecondary}" />
-                                <Button Grid.Column="1"
-                                        Margin="0,15,10,0"
-                                        Content="Cancel"
-                                        Style="{StaticResource CustomButtonSecondary}" />
-                            </Grid>
-
                         </Grid>
-
-
                     </Grid>
                 </Border>
             </Grid>

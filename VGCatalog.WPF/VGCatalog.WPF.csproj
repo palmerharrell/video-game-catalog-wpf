@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Resource Include="Images\SMB1.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\SMBAndDH.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
