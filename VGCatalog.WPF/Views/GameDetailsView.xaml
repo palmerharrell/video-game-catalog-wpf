@@ -44,7 +44,9 @@
                         </Grid.RowDefinitions>
 
                         <!--  Image  -->
-                        <Image Grid.Row="0" Source="/Images/SMB1.jpg" />
+                        <Image x:Name="GameImage"
+                               Grid.Row="0"
+                               Source="/Images/SMB1.jpg" />
 
                         <!--  Naviagation Buttons  -->
                         <StackPanel Grid.Row="1"
@@ -61,10 +63,7 @@
                         </StackPanel>
 
                     </Grid>
-
                 </Border>
-
-
 
                 <!--  Add/Download/Delete Buttons  -->
                 <StackPanel Grid.Row="2"
@@ -121,7 +120,8 @@
                                    Style="{StaticResource CustomDetailsLabel}" />
                             <TextBox Grid.Column="1"
                                      FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
-                                     Style="{StaticResource CustomDetailsTextBox}" />
+                                     Style="{StaticResource CustomDetailsTextBox}"
+                                     Text="{Binding Title}" />
                         </Grid>
 
                         <!--  Platform  -->
@@ -135,7 +135,8 @@
                                    Style="{StaticResource CustomDetailsLabel}" />
                             <TextBox Grid.Column="1"
                                      FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
-                                     Style="{StaticResource CustomDetailsTextBox}" />
+                                     Style="{StaticResource CustomDetailsTextBox}"
+                                     Text="{Binding Platform}" />
                         </Grid>
 
                         <!--  Physical/Digital  -->
@@ -164,6 +165,7 @@
                                     <RadioButton Grid.Column="0"
                                                  Content="Physical"
                                                  FocusVisualStyle="{StaticResource CustomRadioButtonFocusVisualStyle}"
+                                                 IsChecked="True"
                                                  Style="{StaticResource CustomRadioButton}" />
 
                                     <RadioButton Grid.Column="1"
@@ -189,7 +191,8 @@
                                      Width="100"
                                      HorizontalAlignment="Left"
                                      FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
-                                     Style="{StaticResource CustomDetailsTextBox}" />
+                                     Style="{StaticResource CustomDetailsTextBox}"
+                                     Text="{Binding ReleaseYear}" />
                         </Grid>
 
                         <!--  Genre  -->
@@ -203,7 +206,8 @@
                                    Style="{StaticResource CustomDetailsLabel}" />
                             <TextBox Grid.Column="1"
                                      FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
-                                     Style="{StaticResource CustomDetailsTextBox}" />
+                                     Style="{StaticResource CustomDetailsTextBox}"
+                                     Text="{Binding Genre}" />
                         </Grid>
 
                         <!--  Developer  -->
@@ -217,7 +221,8 @@
                                    Style="{StaticResource CustomDetailsLabel}" />
                             <TextBox Grid.Column="1"
                                      FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
-                                     Style="{StaticResource CustomDetailsTextBox}" />
+                                     Style="{StaticResource CustomDetailsTextBox}"
+                                     Text="{Binding Developer}" />
                         </Grid>
 
                         <!--  Publisher  -->
@@ -231,7 +236,8 @@
                                    Style="{StaticResource CustomDetailsLabel}" />
                             <TextBox Grid.Column="1"
                                      FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
-                                     Style="{StaticResource CustomDetailsTextBox}" />
+                                     Style="{StaticResource CustomDetailsTextBox}"
+                                     Text="{Binding Publisher}" />
                         </Grid>
 
                         <!--  Description  -->
@@ -249,7 +255,8 @@
                                      Margin="0,10,10,10"
                                      VerticalContentAlignment="Top"
                                      FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
-                                     Style="{StaticResource CustomDetailsDescriptionBox}" />
+                                     Style="{StaticResource CustomDetailsDescriptionBox}"
+                                     Text="{Binding Description}" />
                         </Grid>
 
                         <Grid Grid.Row="8">

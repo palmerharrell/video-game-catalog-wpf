@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VGCatalog.WPF.ViewModels;
 
 namespace VGCatalog.WPF.Views
 {
@@ -22,6 +23,7 @@ namespace VGCatalog.WPF.Views
     {
         public GameDetailsView()
         {
+            DataContext = new GameDetailsViewModel();
             InitializeComponent();
         }
     }
