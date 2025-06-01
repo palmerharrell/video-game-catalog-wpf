@@ -71,11 +71,12 @@
 
         <StackPanel Grid.Row="2"
                     Margin="0,10,10,0"
-                    HorizontalAlignment="Center"
+                    HorizontalAlignment="Stretch"
                     Orientation="Horizontal">
 
             <!--  Add Game Button  -->
             <Button x:Name="btnAddGame"
+                    Width="135"
                     Margin="0,0,10,0"
                     Content="Add Game"
                     FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"

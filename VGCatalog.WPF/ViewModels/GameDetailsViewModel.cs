@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using VGCatalog.WPF.Commands;
 
 namespace VGCatalog.WPF.ViewModels
 {
@@ -111,6 +113,102 @@ namespace VGCatalog.WPF.ViewModels
                 _description = value;
                 OnPropertyChanged(nameof(Description));
             }
+        }
+
+        private List<string> _gameImages;
+        public IEnumerable<string> GameImages
+        {
+            get
+            {
+                return _gameImages;
+            }
+            private set
+            {
+                _gameImages = (List<string>)value;
+                SelectedImageIndex = 0;
+                ImageSource = _gameImages[_selectedImageIndex];
+                OnPropertyChanged(nameof(GameImages));
+            }
+        }
+
+        private int _selectedImageIndex = 0;
+        public int SelectedImageIndex
+        {
+            get
+            {
+                return _selectedImageIndex;
+            }
+            set
+            {
+                _selectedImageIndex = value;
+
+                OnPropertyChanged(nameof(SelectedImageIndex));
+                ImageSource = _gameImages[_selectedImageIndex];
+
+                BackImageCommand.RaiseCanExecuteChanged();
+                ForwardImageCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        private string _imageSource;
+        public string ImageSource
+        {
+            get
+            {
+                return _imageSource;
+            }
+            set
+            {
+                _imageSource = value;
+                OnPropertyChanged(nameof(ImageSource));
+            }
+        }
+
+        public DelegateCommand BackImageCommand { get; }
+        public DelegateCommand ForwardImageCommand { get; }
+
+        public GameDetailsViewModel()
+        {
+            BackImageCommand = new DelegateCommand(GoBack, CanGoBack);
+            ForwardImageCommand = new DelegateCommand(GoForward, CanGoForward);
+
+            GameImages = new List<string> { "/Images/SMB1.jpg", "/Images/SMBAndDH.jpg" };
+
+
+        }
+
+        private void GoBack()
+        {
+            if (SelectedImageIndex > 0)
+            {
+                SelectedImageIndex--;
+            }
+            else
+            {
+                SelectedImageIndex = 0;
+            }
+        }
+
+        private bool CanGoBack()
+        {
+            return SelectedImageIndex > 0;
+        }
+
+        private void GoForward()
+        {
+            if (SelectedImageIndex < GameImages.Count() - 1)
+            {
+                SelectedImageIndex++;
+            }
+            else
+            {
+                SelectedImageIndex = GameImages.Count() - 1;
+            }
+        }
+
+        private bool CanGoForward()
+        {
+            return SelectedImageIndex < GameImages.Count() - 1;
         }
     }
 }

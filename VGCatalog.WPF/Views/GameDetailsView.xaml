@@ -46,7 +46,7 @@
                         <!--  Image  -->
                         <Image x:Name="GameImage"
                                Grid.Row="0"
-                               Source="/Images/SMB1.jpg" />
+                               Source="{Binding ImageSource, UpdateSourceTrigger=PropertyChanged}" />
 
                         <!--  Naviagation Buttons  -->
                         <StackPanel Grid.Row="1"
@@ -54,10 +54,12 @@
                                     HorizontalAlignment="Center"
                                     Orientation="Horizontal">
                             <Button Margin="0,0,10,0"
+                                    Command="{Binding BackImageCommand}"
                                     Content="&lt;"
                                     FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                                     Style="{StaticResource CustomImageNavigation}" />
-                            <Button Content="&gt;"
+                            <Button Command="{Binding ForwardImageCommand}"
+                                    Content="&gt;"
                                     FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                                     Style="{StaticResource CustomImageNavigation}" />
                         </StackPanel>
@@ -259,6 +261,7 @@
                                      Text="{Binding Description}" />
                         </Grid>
 
+                        <!--  Prices Button  -->
                         <Grid Grid.Row="8">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition SharedSizeGroup="DetailsLabel" />
@@ -267,7 +270,7 @@
                             <Button Grid.Column="1"
                                     Width="160"
                                     Margin="0,15,10,0"
-                                    HorizontalAlignment="Left"
+                                    HorizontalAlignment="Center"
                                     Content="Prices"
                                     FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                                     Style="{StaticResource CustomButtonSecondary}" />

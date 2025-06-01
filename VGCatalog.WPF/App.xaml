@@ -161,6 +161,9 @@
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="#1F1F1F" />
                             </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="#6E6E6E" />
+                            </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -195,7 +198,7 @@
         </Style>
 
         <Style x:Key="CustomDetailsLabel" TargetType="{x:Type Label}">
-            <Setter Property="Foreground" Value="DarkGray" />
+            <Setter Property="Foreground" Value="Gray" />
             <Setter Property="FontSize" Value="22" />
             <Setter Property="FontWeight" Value="Medium" />
             <Setter Property="VerticalAlignment" Value="Center" />
