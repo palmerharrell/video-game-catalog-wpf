@@ -53,6 +53,7 @@
                      BorderBrush="Transparent"
                      FontSize="16"
                      Foreground="LightGray"
+                     SelectedIndex="{Binding SelectedGameIndex, UpdateSourceTrigger=PropertyChanged}"
                      SelectionMode="Single">
                 <ListBoxItem Content="Super Mario Bros."
                              FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
@@ -78,15 +79,17 @@
             <Button x:Name="btnAddGame"
                     Width="135"
                     Margin="0,0,10,0"
+                    Command="{Binding EnterAddMode}"
                     Content="Add Game"
                     FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
+                    IsEnabled="{Binding NotInScanMode}"
                     Style="{StaticResource CustomButtonPrimary}" />
 
-            <!--  Scan Barcodes Button  -->
-            <Button x:Name="btnScan"
-                    Content="Scan Barcodes"
-                    FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
-                    Style="{StaticResource CustomButtonPrimary}" />
+            <!--  Scan Barcodes ToggleButton  -->
+            <ToggleButton x:Name="btnScan"
+                          FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
+                          IsChecked="{Binding InScanMode, UpdateSourceTrigger=PropertyChanged}"
+                          Style="{StaticResource CustomToggleButtonScan}" />
 
         </StackPanel>
     </Grid>

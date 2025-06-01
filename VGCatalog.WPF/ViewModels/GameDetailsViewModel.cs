@@ -179,7 +179,7 @@ namespace VGCatalog.WPF.ViewModels
             BackImageCommand = new DelegateCommand(GoBack, CanGoBack);
             ForwardImageCommand = new DelegateCommand(GoForward, CanGoForward);
 
-            GameImages = new List<string> { "/Images/SMB1.jpg", "/Images/SMBAndDH.jpg", "/Images/BerriesAndCream.jpg" };
+            GameImages = new List<string> { "/Images/SMB1.jpg", "/Images/SMBAndDH.jpg" };
 
 
         }
