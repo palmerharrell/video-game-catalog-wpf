@@ -10,6 +10,8 @@ namespace VGCatalog.WPF.ViewModels
 {
     public class GameDetailsViewModel : ViewModelBase
     {
+        #region GAME PROPERTIES
+
         private string _title;
         public string Title
         {
@@ -114,7 +116,9 @@ namespace VGCatalog.WPF.ViewModels
                 OnPropertyChanged(nameof(Description));
             }
         }
+        #endregion
 
+        #region IMAGE PROPERTIES
         private List<string> _gameImages;
         public IEnumerable<string> GameImages
         {
@@ -163,16 +167,19 @@ namespace VGCatalog.WPF.ViewModels
                 OnPropertyChanged(nameof(ImageSource));
             }
         }
+        #endregion
 
+        #region COMMANDS
         public DelegateCommand BackImageCommand { get; }
         public DelegateCommand ForwardImageCommand { get; }
+        #endregion
 
         public GameDetailsViewModel()
         {
             BackImageCommand = new DelegateCommand(GoBack, CanGoBack);
             ForwardImageCommand = new DelegateCommand(GoForward, CanGoForward);
 
-            GameImages = new List<string> { "/Images/SMB1.jpg", "/Images/SMBAndDH.jpg" };
+            GameImages = new List<string> { "/Images/SMB1.jpg", "/Images/SMBAndDH.jpg", "/Images/BerriesAndCream.jpg" };
 
 
         }
