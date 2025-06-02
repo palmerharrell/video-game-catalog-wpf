@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using VGCatalog.WPF.ViewModels;
 
 namespace VGCatalog.WPF
 {
@@ -19,6 +20,8 @@ namespace VGCatalog.WPF
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel(new GameListViewModel(),
+                                                  new GameDetailsViewModel());
         }
     }
 }

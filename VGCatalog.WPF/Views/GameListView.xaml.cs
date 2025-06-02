@@ -23,7 +23,6 @@ namespace VGCatalog.WPF.Views
     {
         public GameListView()
         {
-            DataContext = new GameListViewModel();
             InitializeComponent();
         }
 

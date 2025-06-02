@@ -17,6 +17,10 @@
         WindowStyle="None"
         mc:Ignorable="d">
 
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    </Window.Resources>
+
     <Border CornerRadius="22">
 
         <Border Background="#121212"
@@ -49,17 +53,17 @@
                         </Grid.ColumnDefinitions>
 
                         <!--  Game List  -->
-                        <views:GameListView Grid.Column="0" />
+                        <views:GameListView Grid.Column="0" DataContext="{Binding GameListViewModel}" />
 
                         <!--  Game Details  -->
-                        <views:GameDetailsView Grid.Column="1" />
+                        <views:GameDetailsView Grid.Column="1" DataContext="{Binding GameDetailsViewModel}" />
                     </Grid>
                 </Grid>
 
                 <!--  Searching Overlay  -->
                 <Grid Grid.Row="0"
                       Panel.ZIndex="1"
-                      Visibility="Visible">
+                      Visibility="{Binding IsSearching, Converter={StaticResource BooleanToVisibilityConverter}, UpdateSourceTrigger=PropertyChanged}">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
