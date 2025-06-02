@@ -120,6 +120,7 @@ namespace VGCatalog.WPF.Utilities
             if (adorner == null)
             {
                 adorner = new PlaceholderAdorner(textBoxControl);
+                adorner.IsHitTestVisible = false;
                 layer.Add(adorner);
             }
 

@@ -24,7 +24,7 @@
     <Border CornerRadius="22">
 
         <Border Background="#121212"
-                BorderBrush="#121212"
+                BorderBrush="#6E6E6E"
                 BorderThickness="2"
                 CornerRadius="22">
 
@@ -64,44 +64,36 @@
                 <Grid Grid.Row="0"
                       Panel.ZIndex="1"
                       Visibility="{Binding IsSearching, Converter={StaticResource BooleanToVisibilityConverter}, UpdateSourceTrigger=PropertyChanged}">
-
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
                     <Border Grid.Row="0"
-                            Background="Gray"
-                            BorderBrush="Gray"
+                            Background="#1F1F1F"
+                            BorderBrush="#1F1F1F"
                             BorderThickness="5"
                             CornerRadius="22"
-                            Opacity="0.45" />
+                            Opacity="0.75" />
                     <Border Grid.Row="0"
                             Width="350"
                             Height="100"
                             Margin="5"
                             Background="#1F1F1F"
-                            BorderBrush="White"
+                            BorderBrush="LightGray"
                             BorderThickness="2"
                             CornerRadius="30">
-                        <StackPanel HorizontalAlignment="Center"
+                        <StackPanel Width="290"
+                                    HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
+                                    MouseDown="StackPanel_MouseDown"
                                     Opacity="1">
 
                             <TextBlock HorizontalAlignment="Center"
                                        FontSize="30"
-                                       Foreground="White"
+                                       Foreground="LightGray"
                                        Text="Searching..." />
 
-                            <Line Margin="5,15,5,10"
-                                  HorizontalAlignment="Center"
-                                  SnapsToDevicePixels="True"
-                                  Stroke="#852020"
-                                  StrokeEndLineCap="Round"
-                                  StrokeStartLineCap="Round"
-                                  StrokeThickness="12"
-                                  X1="0"
-                                  X2="200" />
-
+                            <Line Style="{StaticResource SearchingLineAnimation}" Visibility="{Binding IsSearching, Converter={StaticResource BooleanToVisibilityConverter}, UpdateSourceTrigger=PropertyChanged}" />
                         </StackPanel>
                     </Border>
                 </Grid>

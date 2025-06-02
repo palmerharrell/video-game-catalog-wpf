@@ -23,5 +23,21 @@ namespace VGCatalog.WPF
             DataContext = new MainWindowViewModel(new GameListViewModel(),
                                                   new GameDetailsViewModel());
         }
+
+        private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed && e.ClickCount != 2)
+            {
+
+                if (WindowState == WindowState.Maximized)
+                {
+                    WindowState = WindowState.Normal;
+                    Top = 0;
+                    Left = e.GetPosition(this).X - Width / 2;
+                }
+
+                DragMove();
+            }
+        }
     }
 }

@@ -26,7 +26,7 @@
             <TextBox x:Name="txtbxSearch"
                      Grid.Column="0"
                      Margin="0,0,5,10"
-                     utilities:TextBoxAdorner.Placeholder="Search..."
+                     utilities:TextBoxAdorner.Placeholder="Search catalog by title..."
                      FocusVisualStyle="{StaticResource CustomFocusVisualStyle}"
                      Style="{StaticResource CustomTextBox}"
                      Text="{Binding SearchString, UpdateSourceTrigger=PropertyChanged}" />

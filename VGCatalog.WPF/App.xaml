@@ -363,5 +363,62 @@
             </Setter>
         </Style>
 
+        <Style x:Key="SearchingLineAnimation" TargetType="{x:Type Line}">
+            <Setter Property="X1" Value="0" />
+            <Setter Property="X2" Value="10" />
+            <Setter Property="Margin" Value="5,20,0,10" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Stroke" Value="#055525" />
+            <Setter Property="StrokeEndLineCap" Value="Round" />
+            <Setter Property="StrokeStartLineCap" Value="Round" />
+            <Setter Property="StrokeThickness" Value="12" />
+
+            <Style.Triggers>
+                <Trigger Property="IsVisible" Value="True">
+
+                    <Trigger.EnterActions>
+                        <BeginStoryboard x:Name="SearchingLine">
+                            <Storyboard RepeatBehavior="Forever">
+                                <DoubleAnimation AccelerationRatio="0.8"
+                                                 Storyboard.TargetProperty="X2"
+                                                 From="10"
+                                                 To="275"
+                                                 Duration="0:0:0.5" />
+                                <DoubleAnimation AccelerationRatio="0.8"
+                                                 BeginTime="0:0:0.6"
+                                                 Storyboard.TargetProperty="X1"
+                                                 From="0"
+                                                 To="265"
+                                                 Duration="0:0:0.5" />
+                                <DoubleAnimation AccelerationRatio="0.8"
+                                                 BeginTime="0:0:1.2"
+                                                 Storyboard.TargetProperty="X1"
+                                                 From="265"
+                                                 To="0"
+                                                 Duration="0:0:0.5" />
+                                <DoubleAnimation AccelerationRatio="0.8"
+                                                 BeginTime="0:0:1.8"
+                                                 Storyboard.TargetProperty="X2"
+                                                 From="275"
+                                                 To="10"
+                                                 Duration="0:0:0.5" />
+                                <DoubleAnimation BeginTime="0:0:2.3"
+                                                 Storyboard.TargetProperty="X2"
+                                                 From="10"
+                                                 To="10"
+                                                 Duration="0:0:0.1" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+
+                    <Trigger.ExitActions>
+                        <StopStoryboard BeginStoryboardName="SearchingLine" />
+                    </Trigger.ExitActions>
+
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
     </Application.Resources>
 </Application>
