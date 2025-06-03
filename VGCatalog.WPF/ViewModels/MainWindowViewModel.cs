@@ -53,7 +53,24 @@ namespace VGCatalog.WPF.ViewModels
             GameListViewModel = gameListViewModel;
             GameDetailsViewModel = gameDetailsViewModel;
 
+            GameListViewModel.ClearDetailsForm += GameListViewModel_ClearDetailsForm;
             GameDetailsViewModel.IsSearchingChanged += GameDetailsViewModel_IsSearchingChanged;
+        }
+
+        private void GameListViewModel_ClearDetailsForm()
+        {
+            //TODO: Probably not this
+            GameDetailsViewModel.Title = string.Empty;
+            GameDetailsViewModel.Platform = string.Empty;
+            GameDetailsViewModel.ReleaseYear = string.Empty;
+            GameDetailsViewModel.Genre = string.Empty;
+            GameDetailsViewModel.Developer = string.Empty;
+            GameDetailsViewModel.Publisher = string.Empty;
+            GameDetailsViewModel.Description = string.Empty;
+
+            GameDetailsViewModel.GameImages = new List<string>();
+            GameDetailsViewModel.SelectedImageIndex = 0;
+            GameDetailsViewModel.ImageSource = string.Empty;
         }
 
         private void GameDetailsViewModel_IsSearchingChanged()

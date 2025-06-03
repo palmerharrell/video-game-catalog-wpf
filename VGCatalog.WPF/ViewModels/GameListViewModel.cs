@@ -11,7 +11,6 @@ namespace VGCatalog.WPF.ViewModels
 {
     public class GameListViewModel : ViewModelBase
     {
-
         #region PROPERTIES
         public bool SearchBoxHasValue => !string.IsNullOrWhiteSpace(_searchString);
 
@@ -66,6 +65,8 @@ namespace VGCatalog.WPF.ViewModels
         public DelegateCommand EnterAddMode { get; }
         #endregion
 
+        public event Action ClearDetailsForm;
+
         public GameListViewModel()
         {
             EnterAddMode = new DelegateCommand(PrepareToAddGame, CanEnterAddMode);
@@ -74,6 +75,7 @@ namespace VGCatalog.WPF.ViewModels
         private void PrepareToAddGame()
         {
             SelectedGameIndex = -1;
+            ClearDetailsForm?.Invoke();
         }
 
         private bool CanEnterAddMode()

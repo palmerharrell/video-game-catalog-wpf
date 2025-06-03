@@ -28,13 +28,12 @@ namespace VGCatalog.WPF.ViewModels
             }
         }
 
-        private string _title;
+        private string _title = "Super Mario Bros.";
         public string Title
         {
             get
             {
-                //return _title;
-                return "Super Mario Bros.";
+                return _title;
             }
             set
             {
@@ -43,13 +42,12 @@ namespace VGCatalog.WPF.ViewModels
             }
         }
 
-        private string _platform;
+        private string _platform = "Nintendo Entertainment System";
         public string Platform
         {
             get
             {
-                //return _platform;
-                return "Nintendo Entertainment System";
+                return _platform;
             }
             set
             {
@@ -58,13 +56,12 @@ namespace VGCatalog.WPF.ViewModels
             }
         }
 
-        private string _releaseYear;
+        private string _releaseYear = 1985.ToString();
         public string ReleaseYear
         {
             get
             {
-                //return _releaseYear;
-                return 1985.ToString();
+                return _releaseYear;
             }
             set
             {
@@ -73,13 +70,12 @@ namespace VGCatalog.WPF.ViewModels
             }
         }
 
-        private string _genre;
+        private string _genre = "Platformer";
         public string Genre
         {
             get
             {
-                //return _genre;
-                return "Platformer";
+                return _genre;
             }
             set
             {
@@ -88,13 +84,12 @@ namespace VGCatalog.WPF.ViewModels
             }
         }
 
-        private string _developer;
+        private string _developer = "Nintendo";
         public string Developer
         {
             get
             {
-                //return _developer;
-                return "Nintendo";
+                return _developer;
             }
             set
             {
@@ -103,13 +98,12 @@ namespace VGCatalog.WPF.ViewModels
             }
         }
 
-        private string _publisher;
+        private string _publisher = "Nintendo";
         public string Publisher
         {
             get
             {
-                //return _publisher;
-                return "Nintendo";
+                return _publisher;
             }
             set
             {
@@ -118,13 +112,12 @@ namespace VGCatalog.WPF.ViewModels
             }
         }
 
-        private string _description;
+        private string _description = "Cartridge only, custom case";
         public string Description
         {
             get
             {
-                //return _description;
-                return "Cartridge only, custom case";
+                return _description;
             }
             set
             {
@@ -142,11 +135,15 @@ namespace VGCatalog.WPF.ViewModels
             {
                 return _gameImages;
             }
-            private set
+            set
             {
                 _gameImages = (List<string>)value;
                 SelectedImageIndex = 0;
-                ImageSource = _gameImages[_selectedImageIndex];
+
+                if (_gameImages.Count > 0)
+                {
+                    ImageSource = _gameImages[_selectedImageIndex];
+                }
                 OnPropertyChanged(nameof(GameImages));
             }
         }
@@ -163,7 +160,11 @@ namespace VGCatalog.WPF.ViewModels
                 _selectedImageIndex = value;
 
                 OnPropertyChanged(nameof(SelectedImageIndex));
-                ImageSource = _gameImages[_selectedImageIndex];
+
+                if (_gameImages.Count > 0)
+                {
+                    ImageSource = _gameImages[_selectedImageIndex];
+                }
 
                 BackImageCommand.RaiseCanExecuteChanged();
                 ForwardImageCommand.RaiseCanExecuteChanged();
