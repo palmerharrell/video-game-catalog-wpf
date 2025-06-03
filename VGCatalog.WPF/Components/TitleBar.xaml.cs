@@ -2,14 +2,14 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace VGCatalog.WPF.Views
+namespace VGCatalog.WPF.Components
 {
     /// <summary>
     /// Interaction logic for TitleBar.xaml
     /// </summary>
-    public partial class TitleBarView : UserControl
+    public partial class TitleBar : UserControl
     {
-        public TitleBarView()
+        public TitleBar()
         {
             InitializeComponent();
         }
