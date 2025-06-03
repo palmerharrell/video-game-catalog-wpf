@@ -63,11 +63,21 @@
 
                         <!--  Game Details  -->
                         <views:GameDetailsView Grid.Column="1" DataContext="{Binding GameDetailsViewModel}" />
+
+                        <!--  Search Filter  -->
+                        <!--  TODO: Set DataContext, if I end up needing any:  -->
+                        <!--<views:GameFilterView Grid.Column="0"
+                                              Grid.ColumnSpan="2"
+                                              Panel.ZIndex="2"
+                                              DataContext="{Binding GameFilterViewModel}" />-->
+                        <views:GameFilterView Grid.Column="0"
+                                              Grid.ColumnSpan="2"
+                                              Panel.ZIndex="2" />
                     </Grid>
                 </Grid>
 
                 <!--  Searching Overlay  -->
-                <components:SearchingOverlay Grid.Row="0" />
+                <components:SearchingOverlay Grid.Row="0" Panel.ZIndex="2" />
 
             </Grid>
 

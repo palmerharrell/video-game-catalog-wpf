@@ -35,6 +35,7 @@
                 Click="btnMinimize_Click"
                 Content="—"
                 Cursor="Hand"
+                FontFamily="Arial"
                 FontSize="11"
                 FontWeight="Bold"
                 Foreground="White"
@@ -73,6 +74,7 @@
                 Click="btnMaximizeAndRestore_Click"
                 Content="◱"
                 Cursor="Hand"
+                FontFamily="Arial"
                 FontSize="15"
                 Foreground="White"
                 IsTabStop="False">
@@ -106,6 +108,7 @@
                 Click="btnClose_Click"
                 Content="X"
                 Cursor="Hand"
+                FontFamily="Arial"
                 FontSize="15"
                 Foreground="White"
                 IsTabStop="False">

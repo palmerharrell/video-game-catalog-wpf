@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VGCatalog.WPF.Commands;
 
 namespace VGCatalog.WPF.ViewModels
 {
@@ -38,7 +39,6 @@ namespace VGCatalog.WPF.ViewModels
             }
         }
 
-        private bool _isSearching;
         public bool IsSearching
         {
             get
@@ -46,6 +46,18 @@ namespace VGCatalog.WPF.ViewModels
                 return GameDetailsViewModel.IsSearching;
             }
         }
+
+        public bool InFilterMode
+        {
+            get
+            {
+                return GameListViewModel.InFilterMode;
+            }
+        }
+        #endregion
+
+        #region COMMANDS
+        public DelegateCommand CloseFilter { get; }
         #endregion
 
         public MainWindowViewModel(GameListViewModel gameListViewModel, GameDetailsViewModel gameDetailsViewModel)
@@ -53,8 +65,28 @@ namespace VGCatalog.WPF.ViewModels
             GameListViewModel = gameListViewModel;
             GameDetailsViewModel = gameDetailsViewModel;
 
+            GameListViewModel.EnterFilterMode += GameListViewModel_EnterFilterMode;
             GameListViewModel.ClearDetailsForm += GameListViewModel_ClearDetailsForm;
             GameDetailsViewModel.IsSearchingChanged += GameDetailsViewModel_IsSearchingChanged;
+
+            CloseFilter = new DelegateCommand(CloseGameFilter, CanCloseGameFilter);
+        }
+
+        private void CloseGameFilter()
+        {
+            GameListViewModel.InFilterMode = false;
+            OnPropertyChanged(nameof(InFilterMode));
+        }
+
+        private bool CanCloseGameFilter()
+        {
+            return true; //TODO: Adjust as needed 
+        }
+
+
+        private void GameListViewModel_EnterFilterMode()
+        {
+            OnPropertyChanged(nameof(InFilterMode));
         }
 
         private void GameListViewModel_ClearDetailsForm()

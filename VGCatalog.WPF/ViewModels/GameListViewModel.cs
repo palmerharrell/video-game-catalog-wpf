@@ -58,18 +58,34 @@ namespace VGCatalog.WPF.ViewModels
                 OnPropertyChanged(nameof(NotInScanMode));
             }
         }
+
+        private bool _inFilterMode;
+        public bool InFilterMode
+        {
+            get
+            {
+                return _inFilterMode;
+            }
+            set
+            {
+                _inFilterMode = value;
+                OnPropertyChanged(nameof(InFilterMode));
+            }
+        }
         #endregion
 
         #region COMMANDS
-        public DelegateCommand FilterClickCommand { get; } //TODO: This may need to be a different command type later
+        public DelegateCommand FilterClickCommand { get; }
         public DelegateCommand EnterAddMode { get; }
         #endregion
 
         public event Action ClearDetailsForm;
+        public event Action EnterFilterMode;
 
         public GameListViewModel()
         {
             EnterAddMode = new DelegateCommand(PrepareToAddGame, CanEnterAddMode);
+            FilterClickCommand = new DelegateCommand(ShowGameFilter, CanShowGameFilter);
         }
 
         private void PrepareToAddGame()
@@ -84,5 +100,15 @@ namespace VGCatalog.WPF.ViewModels
                                 //      since these CanExecute methods control enable/disable too.
         }
 
+        private void ShowGameFilter()
+        {
+            InFilterMode = true;
+            EnterFilterMode?.Invoke();
+        }
+
+        private bool CanShowGameFilter()
+        {
+            return true; //TODO: Adjust if needed
+        }
     }
 }
