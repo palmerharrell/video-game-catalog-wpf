@@ -369,7 +369,14 @@
             <Setter Property="Margin" Value="5,20,0,10" />
             <Setter Property="HorizontalAlignment" Value="Left" />
             <Setter Property="SnapsToDevicePixels" Value="True" />
-            <Setter Property="Stroke" Value="#055525" />
+            <Setter Property="Stroke">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Offset="0.0" Color="#D4145A" />
+                        <GradientStop Offset="1.0" Color="#FBB03B" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
             <Setter Property="StrokeEndLineCap" Value="Round" />
             <Setter Property="StrokeStartLineCap" Value="Round" />
             <Setter Property="StrokeThickness" Value="12" />
@@ -383,27 +390,27 @@
                                 <DoubleAnimation AccelerationRatio="0.8"
                                                  Storyboard.TargetProperty="X2"
                                                  From="10"
-                                                 To="275"
-                                                 Duration="0:0:0.5" />
+                                                 To="277"
+                                                 Duration="0:0:0.4" />
                                 <DoubleAnimation AccelerationRatio="0.8"
-                                                 BeginTime="0:0:0.6"
+                                                 BeginTime="0:0:0.2"
                                                  Storyboard.TargetProperty="X1"
                                                  From="0"
-                                                 To="265"
-                                                 Duration="0:0:0.5" />
+                                                 To="267"
+                                                 Duration="0:0:0.4" />
                                 <DoubleAnimation AccelerationRatio="0.8"
-                                                 BeginTime="0:0:1.2"
+                                                 BeginTime="0:0:0.7"
                                                  Storyboard.TargetProperty="X1"
-                                                 From="265"
+                                                 From="267"
                                                  To="0"
-                                                 Duration="0:0:0.5" />
+                                                 Duration="0:0:0.4" />
                                 <DoubleAnimation AccelerationRatio="0.8"
-                                                 BeginTime="0:0:1.8"
+                                                 BeginTime="0:0:0.9"
                                                  Storyboard.TargetProperty="X2"
-                                                 From="275"
+                                                 From="277"
                                                  To="10"
-                                                 Duration="0:0:0.5" />
-                                <DoubleAnimation BeginTime="0:0:2.3"
+                                                 Duration="0:0:0.4" />
+                                <DoubleAnimation BeginTime="0:0:1.3"
                                                  Storyboard.TargetProperty="X2"
                                                  From="10"
                                                  To="10"

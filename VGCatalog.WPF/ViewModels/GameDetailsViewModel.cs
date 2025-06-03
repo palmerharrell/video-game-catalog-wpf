@@ -244,7 +244,7 @@ namespace VGCatalog.WPF.ViewModels
             IsSearching = true;
             OnPropertyChanged(nameof(IsSearching));
 
-            await Task.Delay(3000);
+            await Task.Delay(5000);
 
             IsSearching = false;
             OnPropertyChanged(nameof(IsSearching));

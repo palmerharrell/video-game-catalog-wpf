@@ -24,9 +24,14 @@
     <Border CornerRadius="22">
 
         <Border Background="#121212"
-                BorderBrush="#6E6E6E"
                 BorderThickness="2"
                 CornerRadius="22">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Offset="0.0" Color="#D8B5FF" />
+                    <GradientStop Offset="1.0" Color="#1EAE98" />
+                </LinearGradientBrush>
+            </Border.BorderBrush>
 
             <Grid>
                 <Grid.RowDefinitions>
@@ -79,9 +84,14 @@
                             Height="100"
                             Margin="5"
                             Background="#121212"
-                            BorderBrush="LightGray"
                             BorderThickness="2"
                             CornerRadius="30">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Offset="0.0" Color="#D4145A" />
+                                <GradientStop Offset="1.0" Color="#FBB03B" />
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
                         <StackPanel Width="290"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
