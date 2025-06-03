@@ -24,5 +24,16 @@ namespace VGCatalog.WPF.Views
         {
             InitializeComponent();
         }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: Remove this handler later
+            var destinationurl = "https://github.com/palmerharrell/video-game-catalog-wpf/";
+            var sInfo = new System.Diagnostics.ProcessStartInfo(destinationurl)
+            {
+                UseShellExecute = true
+            };
+            System.Diagnostics.Process.Start(sInfo);
+        }
     }
 }
