@@ -10,10 +10,12 @@
 
   <ItemGroup>
     <None Remove="Images\BerriesAndCream.jpg" />
+    <None Remove="Images\OrangeController.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\BerriesAndCream.jpg" />
+    <Resource Include="Images\OrangeController.ico" />
     <Resource Include="Images\SMB1.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

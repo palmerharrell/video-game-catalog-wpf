@@ -54,6 +54,19 @@ namespace VGCatalog.WPF.ViewModels
                 return GameListViewModel.InFilterMode;
             }
         }
+
+        //TODO: This is for testing. Will probably be derived from a collection of Games eventually.
+        //      And maybe on a FilterViewModel, instead of here
+        public List<string> FilterPlatforms => ["All", "Sega Genesis", 
+                                                "Nintendo Entertainment System",
+                                                "Super Nintendo Entertainment System", "Nintendo 64", 
+                                                "Nintendo Wii", "Nintendo Wii U", "Nintendo Switch",
+                                                "Playstation", "Playstation 2", 
+                                                "Playstation 3", "Playstation 4", "Playstation 5"];
+
+        public List<string> FilterGenres => ["All", "Sports", "Puzzle",
+                                             "Platformer", "Action", "RPG"];
+        //TODO: End of test properties
         #endregion
 
         #region COMMANDS

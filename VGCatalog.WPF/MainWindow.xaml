@@ -13,6 +13,7 @@
         MinHeight="850"
         AllowsTransparency="True"
         Background="Transparent"
+        Icon="/Images/OrangeController.ico"
         ResizeMode="CanResizeWithGrip"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
