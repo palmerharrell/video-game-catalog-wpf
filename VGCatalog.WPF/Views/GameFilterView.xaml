@@ -14,18 +14,13 @@
     </UserControl.Resources>
 
     <Grid Visibility="{Binding InFilterMode, Converter={StaticResource BooleanToVisibilityConverter}, UpdateSourceTrigger=PropertyChanged}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
 
-        <Border Grid.Row="0"
-                Background="#1F1F1F"
+        <Border Background="#1F1F1F"
                 BorderBrush="#1F1F1F"
                 BorderThickness="5"
                 Opacity="0.75" />
 
-        <Border Grid.Row="0"
-                Width="1330"
+        <Border Width="1330"
                 Height="680"
                 Padding="10"
                 Background="#121212"
@@ -61,7 +56,7 @@
                                        FontSize="22"
                                        FontWeight="Bold"
                                        Foreground="White"
-                                       Text="Filter Game List" />
+                                       Text="Filter Games" />
 
                             <!--  Close Filter Button  -->
                             <Button x:Name="btnFilterClose"
@@ -106,8 +101,8 @@
                 <!--  Filter Controls  -->
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="2*" />
                     </Grid.ColumnDefinitions>
 
                     <!--  Left Column  -->
@@ -116,22 +111,33 @@
                                 BorderBrush="#FBB03B"
                                 BorderThickness="1">
                             <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
 
                                 <!--  Platform list  -->
-                                <StackPanel Grid.Column="0" Margin="15,0,0,0">
+                                <StackPanel Grid.Row="0"
+                                            Grid.Column="0"
+                                            Margin="15,0,0,0">
                                     <TextBlock HorizontalAlignment="Left"
                                                VerticalAlignment="Center"
                                                FontSize="16"
                                                FontWeight="Bold"
                                                Foreground="DarkGray"
-                                               Text="Platform" />
+                                               Text="Platforms" />
 
-                                    <components:FilterScrollViewerControl Width="260"
-                                                                          Height="300"
+                                    <components:FilterScrollViewerControl Width="Auto"
+                                                                          Height="Auto"
+                                                                          MaxHeight="300"
                                                                           Margin="0,0,0,10"
                                                                           HorizontalAlignment="Left"
                                                                           VerticalAlignment="Top"
@@ -139,21 +145,95 @@
                                 </StackPanel>
 
                                 <!--  Genre list  -->
-                                <StackPanel Grid.Column="1" Margin="15,0,0,0">
+                                <StackPanel Grid.Row="0"
+                                            Grid.Column="1"
+                                            Margin="15,0,0,0">
                                     <TextBlock HorizontalAlignment="Left"
                                                VerticalAlignment="Center"
                                                FontSize="16"
                                                FontWeight="Bold"
                                                Foreground="DarkGray"
-                                               Text="Genre" />
+                                               Text="Genres" />
 
-                                    <components:FilterScrollViewerControl Width="260"
-                                                                          Height="300"
+                                    <components:FilterScrollViewerControl Width="Auto"
+                                                                          Height="Auto"
+                                                                          MaxHeight="300"
                                                                           Margin="0,0,0,10"
                                                                           HorizontalAlignment="Left"
                                                                           VerticalAlignment="Top"
                                                                           DataContext="{Binding FilterGenres}" />
                                 </StackPanel>
+
+                                <!--  Developers list  -->
+                                <StackPanel Grid.Row="0"
+                                            Grid.Column="2"
+                                            Margin="15,0,0,0">
+                                    <TextBlock HorizontalAlignment="Left"
+                                               VerticalAlignment="Center"
+                                               FontSize="16"
+                                               FontWeight="Bold"
+                                               Foreground="DarkGray"
+                                               Text="Developers" />
+
+                                    <components:FilterScrollViewerControl Width="Auto"
+                                                                          Height="Auto"
+                                                                          MaxHeight="300"
+                                                                          Margin="0,0,0,10"
+                                                                          HorizontalAlignment="Left"
+                                                                          VerticalAlignment="Top"
+                                                                          DataContext="{Binding FilterDevelopers}" />
+                                </StackPanel>
+
+                                <!--  Publishers list  -->
+                                <StackPanel Grid.Row="0"
+                                            Grid.Column="3"
+                                            Margin="15,0,0,0">
+                                    <TextBlock HorizontalAlignment="Left"
+                                               VerticalAlignment="Center"
+                                               FontSize="16"
+                                               FontWeight="Bold"
+                                               Foreground="DarkGray"
+                                               Text="Publishers" />
+
+                                    <components:FilterScrollViewerControl Width="Auto"
+                                                                          Height="Auto"
+                                                                          MaxHeight="300"
+                                                                          Margin="0,0,0,10"
+                                                                          HorizontalAlignment="Left"
+                                                                          VerticalAlignment="Top"
+                                                                          DataContext="{Binding FilterPublishers}" />
+                                </StackPanel>
+
+                                <!--  Media ComboBox Label  -->
+                                <Label Grid.Row="1"
+                                       Grid.Column="0"
+                                       Margin="15,10,0,0"
+                                       Content="Media"
+                                       FontSize="16"
+                                       FontWeight="Bold"
+                                       Foreground="White" />
+
+                                <!--  Media ComboBox  -->
+                                <ComboBox Grid.Row="2"
+                                          Grid.Column="0"
+                                          Width="Auto"
+                                          Margin="20,0,140,0"
+                                          VerticalContentAlignment="Center"
+                                          FontSize="16"
+                                          FontWeight="Bold"
+                                          SelectedIndex="0">
+                                    <ComboBoxItem Content="Physical" />
+                                    <ComboBoxItem Content="Digital" />
+                                </ComboBox>
+
+                                <!--  Missing Image Checkbox  -->
+                                <CheckBox Grid.Row="3"
+                                          Margin="20,25,0,0"
+                                          VerticalContentAlignment="Center"
+                                          Content="Missing Image"
+                                          FontSize="16"
+                                          FontWeight="Bold"
+                                          Foreground="LightGray" />
                             </Grid>
                         </Border>
 

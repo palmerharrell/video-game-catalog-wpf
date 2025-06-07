@@ -66,6 +66,17 @@ namespace VGCatalog.WPF.ViewModels
 
         public List<string> FilterGenres => ["All", "Sports", "Puzzle",
                                              "Platformer", "Action", "RPG"];
+
+        public List<string> FilterDevelopers => ["BioWare", "Bluepoint Games", "Bungie", "Game Freak",
+                                                 "Good-Feel", "Kojima Productions", "Level-5", "Media Molecule",
+                                                 "Naughty Dog", "Nintendo", "none", "Playground Games",
+                                                 "Polyphony Digital", "Rare", "Rockstar North", "SCE Japan Studio",
+                                                 "Sega", "Sony", "Square", "Square Enix", "Ubisoft", "Valve", "Vanillaware"];
+
+        public List<string> FilterPublishers => ["Atlus", "Electronic Arts", "Konami", "Microsoft",
+                                                 "Microsoft Game Studios", "Microsoft Studios", "Nintendo",
+                                                 "Rockstar Games", "SCEA", "Sega", "Sony", "Sony Computer Entertainment",
+                                                 "Sony Interactive Entertainment", "Square", "Square Enix", "Ubisoft", "Valve"];
         //TODO: End of test properties
         #endregion
 
@@ -113,6 +124,7 @@ namespace VGCatalog.WPF.ViewModels
             GameDetailsViewModel.Publisher = string.Empty;
             GameDetailsViewModel.Description = string.Empty;
 
+            //TODO: Also, one of these causes binding errors
             GameDetailsViewModel.GameImages = new List<string>();
             GameDetailsViewModel.SelectedImageIndex = 0;
             GameDetailsViewModel.ImageSource = string.Empty;

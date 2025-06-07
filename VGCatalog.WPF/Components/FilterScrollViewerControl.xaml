@@ -8,8 +8,10 @@
              d:DesignWidth="800"
              mc:Ignorable="d">
     <Grid>
-        <Border BorderBrush="DarkGray"
-                BorderThickness="1"
+        <Border Padding="1"
+                BorderBrush="White"
+                BorderThickness="3"
+                CornerRadius="5"
                 SnapsToDevicePixels="True">
             <Grid>
                 <Border Background="DarkGray" />
