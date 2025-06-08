@@ -57,23 +57,21 @@ namespace VGCatalog.WPF.ViewModels
 
         //TODO: This is for testing. Will probably be derived from a collection of Games eventually.
         //      And maybe on a FilterViewModel, instead of here
-        public List<string> FilterPlatforms => ["All", "Sega Genesis", 
-                                                "Nintendo Entertainment System",
-                                                "Super Nintendo Entertainment System", "Nintendo 64", 
-                                                "Nintendo Wii", "Nintendo Wii U", "Nintendo Switch",
-                                                "Playstation", "Playstation 2", 
-                                                "Playstation 3", "Playstation 4", "Playstation 5"];
-
-        public List<string> FilterGenres => ["All", "Sports", "Puzzle",
-                                             "Platformer", "Action", "RPG"];
-
-        public List<string> FilterDevelopers => ["BioWare", "Bluepoint Games", "Bungie", "Game Freak",
+        public List<string> FilterPlatforms => ["All", "Game Boy", "Game Boy Advance", "NES", "Nintendo 3DS", 
+                                                "Nintendo 64", "Nintendo DS", "Nintendo Entertainment System", 
+                                                "Nintendo GameCube", "Nintendo Switch", "PlayStation", "PlayStation 2", 
+                                                "PlayStation 3", "Playstation 4", "Playstation 5", "PlayStation Portable", "SNES", 
+                                                "Super Nintendo Entertainment System", "Wii", "Wii U", "Xbox", "Xbox 360", "Xbox One"];
+        public List<string> FilterGenres => ["All", "Action & Adventure", "Adventure", "Compilation",
+                                             "Platform", "Platformer", "Platformer / Shooter", "Puzzle", 
+                                             "Racing", "Role-Playing (RPG)", "Role-Playing (RPG) / Strategy", 
+                                             "RPG", "Shooter", "Shooter / Puzzle", "Simulator", "Sport", "Sports", "Strategy"];
+        public List<string> FilterDevelopers => ["All", "BioWare", "Bluepoint Games", "Bungie", "Game Freak",
                                                  "Good-Feel", "Kojima Productions", "Level-5", "Media Molecule",
                                                  "Naughty Dog", "Nintendo", "none", "Playground Games",
                                                  "Polyphony Digital", "Rare", "Rockstar North", "SCE Japan Studio",
                                                  "Sega", "Sony", "Square", "Square Enix", "Ubisoft", "Valve", "Vanillaware"];
-
-        public List<string> FilterPublishers => ["Atlus", "Electronic Arts", "Konami", "Microsoft",
+        public List<string> FilterPublishers => ["All", "Atlus", "Electronic Arts", "Konami", "Microsoft",
                                                  "Microsoft Game Studios", "Microsoft Studios", "Nintendo",
                                                  "Rockstar Games", "SCEA", "Sega", "Sony", "Sony Computer Entertainment",
                                                  "Sony Interactive Entertainment", "Square", "Square Enix", "Ubisoft", "Valve"];
@@ -106,7 +104,6 @@ namespace VGCatalog.WPF.ViewModels
         {
             return true; //TODO: Adjust as needed 
         }
-
 
         private void GameListViewModel_EnterFilterMode()
         {

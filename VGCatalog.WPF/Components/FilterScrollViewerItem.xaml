@@ -8,15 +8,17 @@
              d:DesignWidth="800"
              mc:Ignorable="d">
 
-    <Border Padding="0,5,0,5"
-            Background="White"
-            BorderBrush="Gray"
-            BorderThickness="0,0,0,1"
-            TextBlock.FontSize="12">
+    <Border Background="#2A2A2A"
+            BorderBrush="#2A2A2A"
+            BorderThickness="0,0,0,2">
         <CheckBox Grid.Column="0"
                   Margin="3,0,5,0"
                   VerticalContentAlignment="Center"
-                  Content="{Binding}" />
+                  Background="#2A2A2A"
+                  BorderThickness="2"
+                  Content="{Binding}"
+                  FontSize="18"
+                  Foreground="Gray" />
     </Border>
 
 </UserControl>

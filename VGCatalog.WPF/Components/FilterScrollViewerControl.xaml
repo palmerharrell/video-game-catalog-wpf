@@ -7,27 +7,22 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <Grid>
-        <Border Padding="1"
-                BorderBrush="White"
-                BorderThickness="3"
-                CornerRadius="5"
-                SnapsToDevicePixels="True">
-            <Grid>
-                <Border Background="DarkGray" />
-                <ScrollViewer Background="DarkGray"
-                              BorderThickness="0"
-                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                              ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                    <ItemsControl ItemsSource="{Binding}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <local:FilterScrollViewerItem />
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
-            </Grid>
-        </Border>
-    </Grid>
+    <Border Padding="1"
+            BorderBrush="#2A2A2A"
+            BorderThickness="10"
+            CornerRadius="5"
+            SnapsToDevicePixels="True">
+        <ScrollViewer Padding="-2"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <ItemsControl ItemsSource="{Binding}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:FilterScrollViewerItem />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Border>
+
 </UserControl>
