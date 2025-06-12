@@ -63,7 +63,7 @@ namespace VGCatalog.WPF.ViewModels
                                                 "PlayStation 3", "Playstation 4", "Playstation 5", "PlayStation Portable", "SNES", 
                                                 "Super Nintendo Entertainment System", "Wii", "Wii U", "Xbox", "Xbox 360", "Xbox One"];
         public List<string> FilterGenres => ["All", "Action & Adventure", "Adventure", "Compilation",
-                                             "Platform", "Platformer", "Platformer / Shooter", "Puzzle", 
+                                             "Platformer", "Platformer / Shooter", "Puzzle", 
                                              "Racing", "Role-Playing (RPG)", "Role-Playing (RPG) / Strategy", 
                                              "RPG", "Shooter", "Shooter / Puzzle", "Simulator", "Sport", "Sports", "Strategy"];
         public List<string> FilterDevelopers => ["All", "BioWare", "Bluepoint Games", "Bungie", "Game Freak",
