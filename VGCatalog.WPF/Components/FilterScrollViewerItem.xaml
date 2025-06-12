@@ -14,11 +14,11 @@
         <CheckBox Grid.Column="0"
                   Margin="3,0,5,0"
                   VerticalContentAlignment="Center"
-                  Background="#2A2A2A"
+                  Background="DarkGray" BorderBrush="DarkGray"
                   BorderThickness="2"
                   Content="{Binding}"
                   FontSize="18"
-                  Foreground="Gray" />
+                  Foreground="DarkGray" />
     </Border>
 
 </UserControl>
