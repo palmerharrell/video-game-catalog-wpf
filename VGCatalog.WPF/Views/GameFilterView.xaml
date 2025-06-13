@@ -29,12 +29,6 @@
                 BorderThickness="2"
                 CornerRadius="22"
                 SnapsToDevicePixels="True">
-            <!--<Border.BorderBrush>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Offset="0.0" Color="#FBB03B" />
-                    <GradientStop Offset="1.0" Color="#D4145A" />
-                </LinearGradientBrush>
-            </Border.BorderBrush>-->
 
             <Grid>
                 <Grid.RowDefinitions>
@@ -140,7 +134,6 @@
 
                     <!--  Genre list  -->
                     <StackPanel Grid.Row="0"
-                                Grid.RowSpan="2"
                                 Grid.Column="1"
                                 Margin="15,0,0,0"
                                 VerticalAlignment="Top">
@@ -155,7 +148,7 @@
                         <components:FilterScrollViewerControl Width="Auto"
                                                               Height="Auto"
                                                               MaxWidth="320"
-                                                              MaxHeight="480"
+                                                              MaxHeight="380"
                                                               HorizontalAlignment="Left"
                                                               VerticalAlignment="Top"
                                                               DataContext="{Binding FilterGenres}" />
@@ -163,7 +156,7 @@
 
                     <!--  Developers list  -->
                     <StackPanel Grid.Row="0"
-                                Grid.RowSpan="2"
+                                Grid.RowSpan="3"
                                 Grid.Column="2"
                                 MaxHeight="515"
                                 Margin="15,0,0,0"
@@ -187,7 +180,7 @@
 
                     <!--  Publishers list  -->
                     <StackPanel Grid.Row="0"
-                                Grid.RowSpan="2"
+                                Grid.RowSpan="3"
                                 Grid.Column="3"
                                 MaxHeight="515"
                                 Margin="15,0,0,0"
@@ -210,79 +203,108 @@
                     </StackPanel>
 
                     <!--  Release Year Date Range  -->
-                    <Border Grid.Row="1"
-                            Grid.Column="0"
-                            BorderThickness="1">
-                        <Grid Margin="15,0,0,0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Label Grid.Row="0"
-                                   Content="Release Year Range"
-                                   FontSize="18"
-                                   FontWeight="Bold"
-                                   Foreground="DarkGray" />
+                    <Grid Grid.Row="1"
+                          Grid.Column="0"
+                          Margin="15,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0"
+                               Margin="5,0,0,0"
+                               Content="Release Year Range"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Foreground="DarkGray" />
+
+                        <Border Grid.Row="1"
+                                Width="200"
+                                Height="40"
+                                Padding="5,0,5,0"
+                                HorizontalAlignment="Left"
+                                Background="#2A2A2A"
+                                BorderBrush="#2A2A2A"
+                                BorderThickness="1"
+                                CornerRadius="5">
+
                             <StackPanel Grid.Row="1"
                                         Margin="5,0,0,0"
                                         Orientation="Horizontal">
-                                <Label Padding="0,0,5,5"
+
+                                <Label Padding="0,0,5,0"
+                                       VerticalContentAlignment="Center"
                                        Content="From"
                                        FontSize="16"
                                        Foreground="DarkGray" />
                                 <TextBox Width="50"
-                                         Height="23"
+                                         Height="22"
                                          Margin="0,0,10,0"
+                                         VerticalContentAlignment="Center"
                                          Background="DarkGray"
                                          FontSize="14" />
-                                <Label Padding="0,0,5,5"
+
+                                <Label Padding="0,0,5,0"
+                                       VerticalContentAlignment="Center"
                                        Content="To"
                                        FontSize="16"
                                        Foreground="DarkGray" />
                                 <TextBox Width="50"
-                                         Height="23"
+                                         Height="22"
+                                         VerticalContentAlignment="Center"
                                          Background="DarkGray"
                                          FontSize="14" />
                             </StackPanel>
-                        </Grid>
-                    </Border>
+                        </Border>
+                    </Grid>
 
                     <!--  Media Radio Buttons  -->
-                    <Border Grid.Row="2"
-                            Grid.ColumnSpan="2"
-                            BorderThickness="1">
-                        <StackPanel Grid.Row="1"
-                                    Grid.ColumnSpan="2"
-                                    Orientation="Horizontal">
+                    <Grid Grid.Row="1"
+                          Grid.Column="1"
+                          Margin="15,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
 
-                            <Label Margin="20,0,25,0"
-                                   Padding="0,2,0,5"
-                                   Content="Media"
-                                   FontSize="18"
-                                   FontWeight="Bold"
-                                   Foreground="DarkGray" />
+                        <Label Grid.Row="0"
+                               Margin="5,0,0,0"
+                               VerticalAlignment="Bottom"
+                               Content="Media"
+                               FontSize="18"
+                               FontWeight="Bold"
+                               Foreground="DarkGray" />
 
-                            <RadioButton Width="60"
-                                         Content="All"
-                                         IsChecked="True"
-                                         Style="{StaticResource CustomFilterRadioButton}" />
-                            <RadioButton Content="Physical" Style="{StaticResource CustomFilterRadioButton}" />
-                            <RadioButton Content="Digital" Style="{StaticResource CustomFilterRadioButton}" />
-                        </StackPanel>
-                    </Border>
-                </Grid>
+                        <Border Grid.Row="1"
+                                Width="255"
+                                Height="35"
+                                Padding="10,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Background="#2A2A2A"
+                                BorderBrush="#2A2A2A"
+                                BorderThickness="1"
+                                CornerRadius="5">
 
-                <!--  Footer (and 1 Filter control)  -->
-                <Grid Grid.Row="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton Width="60"
+                                             Content="All"
+                                             IsChecked="True"
+                                             Style="{StaticResource CustomFilterRadioButton}" />
+                                <RadioButton Content="Physical" Style="{StaticResource CustomFilterRadioButton}" />
+                                <RadioButton Content="Digital" Style="{StaticResource CustomFilterRadioButton}" />
+                            </StackPanel>
+                        </Border>
+
+                    </Grid>
 
                     <!--  Missing Image Checkbox  -->
-                    <Border Grid.Column="0" BorderThickness="1">
+                    <Border Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="10,20,0,0"
+                            BorderThickness="1">
                         <CheckBox Height="30"
-                                  Margin="20,0,0,20"
+                                  Margin="15,0,0,0"
                                   VerticalContentAlignment="Center"
                                   Background="DarkGray"
                                   BorderBrush="DarkGray"
@@ -292,6 +314,15 @@
                                   FontWeight="Bold"
                                   Foreground="DarkGray" />
                     </Border>
+
+                </Grid>
+
+                <!--  Footer  -->
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
                     <!--  OK & Clear buttons  -->
                     <Border Grid.Column="1"
