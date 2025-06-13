@@ -28,15 +28,16 @@
                 Height="100"
                 Margin="5"
                 Background="#121212"
+                BorderBrush="Gray"
                 BorderThickness="2"
                 CornerRadius="30">
-            <Border.BorderBrush>
+            <!--<Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Offset="0.0" Color="#FBB03B" />
                     <GradientStop Offset="0.5" Color="#D4145A" />
                     <GradientStop Offset="1.0" Color="#FBB03B" />
                 </LinearGradientBrush>
-            </Border.BorderBrush>
+            </Border.BorderBrush>-->
             <StackPanel Width="290"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"

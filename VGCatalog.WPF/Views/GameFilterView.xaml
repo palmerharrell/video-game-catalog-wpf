@@ -213,7 +213,7 @@
 
                         <Label Grid.Row="0"
                                Margin="5,0,0,0"
-                               Content="Release Year Range"
+                               Content="Release Years"
                                FontSize="18"
                                FontWeight="Bold"
                                Foreground="DarkGray" />
@@ -309,7 +309,7 @@
                                   Background="DarkGray"
                                   BorderBrush="DarkGray"
                                   BorderThickness="2"
-                                  Content="Games With No Images"
+                                  Content="Games Without Images"
                                   FontSize="18"
                                   FontWeight="Bold"
                                   Foreground="DarkGray" />
